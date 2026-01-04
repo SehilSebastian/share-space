@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile | ShareSpace</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+<div class="profile-container">
+
+    <!-- Header -->
+    <div class="profile-header">
+        <div class="profile-pic-wrapper">
+            <img id="profilePic" src="default-avatar.png" alt="Profile">
+            <input type="file" id="picInput" accept="image/*" hidden>
+        </div>
+
+        <div class="profile-info">
+            <h2 id="profileName">User Name</h2>
+            <p id="profileEmail">email@ajce.in</p>
+            <p id="profileContact">Contact not set</p>
+
+            <button id="editBtn" class="btn">Edit Profile</button>
+            <button id="saveBtn" class="btn hidden">Save</button>
+            <button id="logoutBtn" class="btn danger">Logout</button>
+        </div>
+    </div>
+
+    <!-- User Posts -->
+    <h3 class="section-title">Posts</h3>
+    <div id="postsGrid" class="posts-grid">
+        <!-- Posts inserted by JS -->
+    </div>
+
+</div>
+
+<script src="profile.js"></script>
+</body>
+</html>

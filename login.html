@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShareSpace Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="left-watermark">S H A R E_S P A C E</div>
+
+    <div class="login-container">
+        <h2>Login</h2>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <label>Email</label>
+                <input type="text" id="email" placeholder="Enter college email">
+                <p class="error" id="emailError"></p>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Enter password">
+                <p class="error" id="passwordError"></p>
+            </div>
+
+            <button type="submit" class="btn">Login</button>
+
+            <p class="signup-link">
+                Don’t have an account? <a href="signin.html">Sign Up</a>
+            </p>
+        </form>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

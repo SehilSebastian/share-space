@@ -1,0 +1,256 @@
+/* ---------- signin.css - Final corrected, aligned, premium ---------- */
+
+/* Page background (same as login) */
+:root{
+  --bg1: #d4ecff;
+  --bg2: #a5d8ff;
+  --bg3: #89c2ff;
+  --card-bg: rgba(255,255,255,0.75);
+  --accent: #006cbe;
+  --deep: #003d7a;
+  --btn: #007adf;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:"Poppins",sans-serif}
+
+/* Background gradient */
+body {
+  background: linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  padding: 24px;
+}
+
+/* Watermark (left) - matches login */
+.left-watermark {
+  position: absolute;
+  left: 40px;
+  top: 8%;
+  font-size: 40px;
+  font-weight: 700;
+  color: #022c5b;
+  opacity: 0.10;
+  letter-spacing: 6px;
+  user-select: none;
+  animation: wmFade 0.6s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes wmFade {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 0.10; transform: translateY(0); }
+}
+
+/* Signup container: match login sizing and spacing */
+.signup-container {
+  width: 560px;                /* same width as login */
+  padding: 30px 40px;         /* reduced from 35px 45px */
+  background: var(--card-bg);
+  border-radius: 28px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 15px 55px rgba(0,0,0,0.18);
+  animation: floatUp 0.8s ease-out;
+  /* Removed max-height and overflow-y to eliminate scrolling */
+}
+
+/* entrance animation */
+@keyframes floatUp {
+  0% { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Form layout - single column, well-aligned */
+.signup-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* reduced from 12px to make more compact */
+}
+
+/* Heading */
+.signup-container h2 {
+  margin: 0 0 12px 0; /* reduced from 16px */
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--deep);
+  text-align: center;
+  animation: textFadeUp .9s ease-out both;
+}
+
+/* subtle text fade */
+@keyframes textFadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* labels */
+label {
+  display: block;
+  font-size: 18px;
+  color: var(--deep);
+  font-weight: 600;
+  margin-bottom: 5px; /* reduced from 6px */
+  animation: glowPulse 3s infinite ease-in-out;
+}
+
+/* input fields */
+.input-field, input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+  width: 100%;
+  padding: 14px 16px; /* reduced from 15px 16px */
+  border-radius: 12px;
+  border: 2px solid rgba(188,220,255,0.9);
+  background: #f8fcff;
+  font-size: 18px;
+  color: #033058;
+  transition: box-shadow .25s ease, transform .15s ease, border-color .2s ease;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+/* focus styles */
+.input-field:focus, input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 14px rgba(0,108,190,0.18);
+  transform: translateY(-2px);
+}
+
+/* Input group wrapper */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4px; /* reduced from 6px */
+}
+
+/* OTP row layout - button appears below inputs in compact mode */
+.otp-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 4px; /* reduced from 6px */
+  margin-bottom: 4px; /* reduced from 6px */
+}
+
+/* Make send OTP button rectangular */
+#sendOtpBtn {
+  padding: 10px 20px;          /* Rectangular padding */
+  background: var(--btn);
+  color: #fff;
+  border: none;
+  border-radius: 4px;          /* Small radius for rectangular look */
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, background .2s ease;
+  box-shadow: 0 4px 8px rgba(0,122,223,0.15);
+  height: 42px;                /* Fixed height for rectangular shape */
+  min-width: 130px;            /* Fixed width for rectangular shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* smaller secondary look when next to inputs */
+.otp-row #sendOtpBtn {
+  flex: 0 0 auto;              /* Let it size based on content */
+  width: auto;                 /* Auto width for rectangular */
+}
+
+/* Hover - rectangular button effect */
+#sendOtpBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,122,223,0.2);
+  background: #0069cc;         /* Slightly darker on hover */
+}
+
+/* OTP input sizing - also make rectangular if needed */
+#otp-button {
+  padding: 8px 12px;
+  font-size: 12px;
+  border-radius: 4px;          /* Rectangular */
+  height: 36px;
+  min-width: 80px;
+  border: 2px solid rgba(188,220,255,0.9);
+  background: var(--btn);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#otp-button:hover {
+  background: #0069cc;
+}
+
+/* Sign up button */
+.btn {
+  margin-top: 6px; /* reduced from 8px */
+  padding: 15px;   /* reduced from 16px */
+  border-radius: 14px;
+  border: none;
+  background: var(--btn);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(0,122,223,0.14);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+/* hover effect */
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0,122,223,0.18);
+}
+
+/* compact error helper text */
+.error {
+  color: #d84c4c;
+  font-size: 14px;
+  height: 16px; /* reduced from 18px */
+  margin-top: 4px; /* reduced from 6px */
+}
+
+/* login redirect text */
+.login-link {
+  margin-top: 8px; /* reduced from 10px */
+  text-align: center;
+  font-size: 16px;
+  color: var(--deep);
+}
+.login-link a {
+  color: var(--deep);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* label glow animation */
+@keyframes glowPulse {
+  0% { color: var(--deep); text-shadow: none; }
+  50% { color: var(--accent); text-shadow: 0 0 8px rgba(0,108,190,0.22); }
+  100% { color: var(--deep); text-shadow: none; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 720px) {
+  .signup-container { width: 92%; padding: 24px; border-radius: 18px; }
+  .left-watermark { display: none; } /* hide watermark on small screens */
+  label { font-size: 16px; }
+  h2 { font-size: 28px; margin-bottom: 10px; }
+  .otp-row { flex-direction: column; }
+  .otp-row #sendOtpBtn { 
+    flex: none; 
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+  }
+  .input-field, input { font-size: 16px; padding: 12px 14px; }
+  .btn { font-size: 18px; padding: 14px; }
+  #sendOtpBtn {
+    padding: 9px 16px;
+    font-size: 13px;
+    height: 40px;
+  }
+}

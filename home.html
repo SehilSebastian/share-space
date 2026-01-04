@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ShareSpace Home</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+<!-- Sidebar Filter -->      
+<div class="sidebar">
+    <h3>Filter</h3>
+
+    <select id="categoryFilter">
+        <option value="">All Categories</option>
+        <option>Books & Notes</option>
+        <option>Electronics</option>
+        <option>Sports & Gym</option>
+        <option>Fashion & Accessories</option>
+        <option>Hostel Essentials</option>
+    </select>
+
+    <button onclick="applyFilter()">Apply</button>
+    <button class="reset" onclick="resetFilter()">Reset</button>
+</div>
+
+<!-- Main Content -->
+<div class="main">
+    <input type="text" id="search" placeholder="Search ads..." oninput="searchAds()">
+
+    <div class="ads" id="adsContainer">
+        <p class="empty">No ads yet. Click + to add.</p>
+    </div>
+</div>
+
+<!-- Floating Add Button -->
+<div class="add-btn" onclick="openModal()">+</div>
+
+<!-- Add Post Modal -->
+<div class="modal" id="modal">
+    <div class="modal-box">
+        <h2>Add Post</h2>
+
+        <input type="file" id="img">
+        <select id="category">
+            <option value="">Select Category</option>
+            <option>Books & Notes</option>
+            <option>Electronics</option>
+            <option>Sports & Gym</option>
+            <option>Fashion & Accessories</option>
+            <option>Hostel Essentials</option>
+        </select>
+
+        <input type="number" id="price" placeholder="Price">
+        <input type="email" id="email" placeholder="Your college email (@ajce.in)">
+
+        <button id="addPost" onclick="addPost()" disabled>Add Post</button>
+        <button class="close" onclick="closeModal()">Cancel</button>
+    </div>
+</div>
+
+<script src="home.js"></script>
+</body>
+</html>
